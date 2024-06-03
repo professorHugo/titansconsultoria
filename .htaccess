@@ -1,0 +1,14 @@
+Header unset Pragma
+FileETag None
+Header unset ETag
+
+# Em cache para sempre (scripts e folhas de estilo)
+<FilesMatch "\.(js|css)$">
+Header set Cache-Control "public"
+Header set Expires "Thu, 15 Apr 2010 20:00:00 GMT"
+Header unset Last-Modified
+</FilesMatch>
+
+<Directory /js> 
+    Options -Indexes 
+</Directory>
